@@ -10,7 +10,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node: [14, 16, 18]
-    name: OS: ${{matrix.os}} | Node: ${{matrix.node}}
+    name: OS ${{matrix.os}} and Node ${{matrix.node}}
 
     steps:
       - uses: actions/checkout@v3
