@@ -1,4 +1,4 @@
-# 🔢 Simple Calculator App
+## 🔢 Simple Calculator App
 
 This is a basic calculator web application built with Node.js and Express, featuring a simple UI. It supports addition, subtraction, multiplication, and division.
 
