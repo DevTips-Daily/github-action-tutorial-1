@@ -10,7 +10,7 @@ jobs:
       node-version: '20'
 
   deploy:
-    needs: build
+    needs: use-reusable
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
