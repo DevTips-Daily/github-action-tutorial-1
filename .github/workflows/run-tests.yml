@@ -8,6 +8,13 @@ jobs:
     runs-on: macOSARM
     steps:
       - uses: actions/checkout@v3
+      - name: Show current working directory
+        run: pwd
+      - name: List files in workspace
+        run: ls -la
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Run tests
         run: |
           npm install
