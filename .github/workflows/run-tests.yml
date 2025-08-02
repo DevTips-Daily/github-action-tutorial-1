@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOSARM
     steps:
       - uses: actions/checkout@v3
       - name: Run tests
@@ -22,10 +22,3 @@ jobs:
         with:
           node-version: 20
       - run: npm install
-
-      - name: Deplpoy to Vercel
-        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
-        env: 
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_USER_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
