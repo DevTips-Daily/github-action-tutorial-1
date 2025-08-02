@@ -5,16 +5,9 @@ on:
 
 jobs:
   build:
-    runs-on: macOSARM
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Show current working directory
-        run: pwd
-      - name: List files in workspace
-        run: ls -la
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
       - name: Run tests
         run: |
           npm install
@@ -29,3 +22,10 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+
+      - name: Deplpoy to Vercel
+        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod --confirm
+        env: 
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_USER_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
